@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Signup Page {% endblock %}
+
+{% block body %}
+   <div class="container">
+			<div class="row">
+      <div class="card-signup card-plain" data-background-color="">
+
+
+          {% if registered %}
+
+          <h1>Thank you for registering!</h1>
+
+          {% else %}
+
+          <form role="form" enctype="multipart/form-data" method="post">
+              {% csrf_token %}
+           <h3 class="card-title title-up " style="color: antiquewhite;">Sign Up</h3>
+
+              {{ user_form}}
+                    {{ profile_form}}
+
+
+
+            <button type="submit" class="btn btn-round bg-transparent border">Sign Up</button>
+          </form>
+          {% endif %}
+         </div> 
+        </div>
+			</div>
+     
+ 
+  {% endblock %}

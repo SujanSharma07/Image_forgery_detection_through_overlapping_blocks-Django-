@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title  %}Home{% endblock %}
+
+{% block icon  %}
+  <!-- add icon link -->
+  <link rel = "icon" href = "../static/accounts/icon/home.png" type = "image/x-icon"> 
+{% endblock %}
+
+<link rel="stylesheet" href="../static/accounts/css/main.css">
+
+{% block body  %}
+
+{%if user.is_authenticated != True %}       
+        <div class="container">
+           <h1>Login</h1>
+           <form role="form" action=" {% url 'user_login' %}" method="post">
+            {% csrf_token %}
+
+            
+                <label>Username</label><br>
+                <input type="text" name="username" id="username"><br>
+                <label>Password</label><br>
+                <input type="password" name="pass" id="pass"><br>
+                <button  type="submit" >Log in</button>
+                <label>Or</label>
+            </form>    
+
+            <a href="{% url 'accounts:register' %}" class="btn btn-danger border btn-round" style="color: antiquewhite;">
+              Signup
+          </a>
+ 
+{% endif %}   
+{%if user.is_authenticated %}
+ <h1>Welcome Visitor {{user}}</h1>
+{% endif %}
+
+
+
+{% endblock %}

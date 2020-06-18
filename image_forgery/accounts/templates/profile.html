@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}  Profile {% endblock %}
+{% block body %}
+
+
+<div class="content-center">
+    <div class="photo-container">
+        <img src="{{userprofileinfo.profile_pic.url }}" />
+    </div>
+    <h3 class="title">{{ userprofileinfo.user.username }}</h3>
+    <p class="h5">{{ userprofileinfo.user.email }}</p>
+
+
+    </div>
+
+
+
+
+{% endblock %}

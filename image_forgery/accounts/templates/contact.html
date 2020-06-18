@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title  %}Contact{% endblock %}
+
+{% block icon  %}
+  <!-- add icon link -->
+  <link rel = "icon" href = "../static/accounts/icon/contact.png" type = "image/x-icon"> 
+{% endblock %}
+
+
+
+{% block body  %}
+
+{%if user.is_authenticated != True %}       
+  <h1>Please Signup to contact us</h1>
+ 
+{% endif %}  
+{%if user.is_authenticated == True %}       
+  p
+          <h1>Here is our contact</h1>
+ 
+{% endif %}    
+{% endblock %}
+
+
+
+

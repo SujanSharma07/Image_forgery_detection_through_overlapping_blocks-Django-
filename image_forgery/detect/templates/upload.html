@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title  %}Upload{% endblock %}
+
+{% block icon  %}
+  <!-- add icon link -->
+  <link rel = "icon" href = "../static/accounts/icon/home.png" type = "image/x-icon"> 
+{% endblock %}
+
+
+
+{% block body  %}
+ 
+<div class="container">
+<div id="Upload_page" style="color:green;
+font-size: larger;
+text-align: center;">
+ <div id ="Upload_page_child">
+  <h3>Upload Image</h3>
+
+  <form role="form"  method=post enctype=multipart/form-data>
+        {% csrf_token %}
+
+  <input id="input_data" type=file name=sample_image required>
+  <button type=submit value=Detect onclick="loadinganimation()">Detect
+  </form>
+</div>
+</div>
+</div>
+
+<h1 id="processing_text"></h1>
+
+<div id = 'processing_text2'>
+	<div id ="circles" >
+	  <span id = "one" ></span>
+	  <span id = "two" ></span>
+	  <span id = "three" ></span>
+	</div>
+	<div id = "pacman" >
+	  <span id = "top" ></span>
+	  <span id = "bottom" ></span>
+	  <span id ="left" ></span>
+	  <div id = "eye" ></div>
+	</div>
+</div>
+
+{% endblock %}
+
+
+
+
